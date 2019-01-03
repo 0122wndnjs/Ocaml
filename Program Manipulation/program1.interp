@@ -1,0 +1,13 @@
+#!./interpreter
+(let gcd (fun a:int (fun b : int
+            (let q (/ a b)
+            (let r (- a (* q b))
+                   (seq (while (not (= r 0))
+                               (seq (set a b)
+                                    (set b r)
+                                    (set q (/ a b))
+                                    (set r (- a (* q b)))))
+                         b)))))
+(let m readint (* changed the number value to readint so that it can read from input*)
+(let n readint (* changed the number value to readint so that it can read from input*)
+(print (app (app gcd m) n)))))
